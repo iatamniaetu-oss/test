@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safarii | النظام الإداري المتكامل لشركات النقل في الجزائر</title>
+    <meta name="description"
+        content="منصة Safarii هي النظام الأول لإدارة شركات النقل البري في الجزائر. إدارة الحجوزات، تتبع الحافلات، وتحليل المبيعات من لوحة تحكم واحدة.">
+    <meta name="keywords" content="نقل, حافلات, حجز تذاكر, الجزائر, إدارة النقل, SaaS">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=grounded-redesign">
+</head>
+
+<body class="safarii-grounded">
+
+    <!-- ============ PRELOADER ============ -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo"><span>.</span>Safarii<span>.</span></div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill"></div>
+            </div>
+            <p class="preloader-text">جاري تحميل المنصة...</p>
+        </div>
+    </div>
+
+    <!-- ============ SCROLL PROGRESS BAR ============ -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Ambient Background Orbs -->
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="ambient-orb ambient-orb-1"></div>
+        <div class="ambient-orb ambient-orb-2"></div>
+        <div class="ambient-orb ambient-orb-3"></div>
+    </div>
+
+    <!-- 3D Background Canvas -->
+    <canvas id="canvas-container" aria-hidden="true"></canvas>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="logo">Safarii<span>.</span></a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#features">المميزات</a></li>
+                <li><a href="#how-it-works">كيف نعمل؟</a></li>
+                <li><a href="#pricing">الأسعار</a></li>
+                <li><a href="#demo">المنصة</a></li>
+                <li><a href="#testimonials">فحص البروتوتايب</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Contact Icons -->
+                <a href="https://t.me/smailata" target="_blank" rel="noopener" class="theme-toggle nav-icon-link"
+                    aria-label="تواصل عبر تيليجرام" title="تيليجرام: @smailata">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=atamniaismail@safarii.app" target="_blank"
+                    rel="noopener" class="theme-toggle nav-icon-link" aria-label="تواصل عبر الإيميل"
+                    title="الإيميل: atamniaismail@safarii.app">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+                    <i class="fa-solid fa-sun" id="themeIcon"></i>
+                </button>
+                <button class="btn-ghost nav-login" id="loginBtn">تسجيل الدخول</button>
+                <button class="btn-primary" id="registerBtn">سجّل شركتك</button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="فتح القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero section-padding" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Text Content -->
+                <div class="hero-content reveal">
+                    <div class="badge">
+                        <span class="pulse-dot"></span>
+                        نظام متكامل لشركات النقل في الجزائر
+                    </div>
+
+                    <h1 class="hero-title">
+                        منصة عملية لإدارة النقل، <br>
+                        <span class="gradient-text" id="typingTarget">من الحجز إلى لوحة التحكم.</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        SAFARII بروتوتايب SaaS موجه لشركات النقل في الجزائر: تحقق من هوية العميل، حجز من الهاتف،
+                        ولوحة تحكم تعرض الرحلات والحجوزات بشكل واضح.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="btn-primary btn-primary-large" id="heroCtaBtn">
+                            <i class="fa-solid fa-rocket" style="margin-left: 8px;"></i>
+                            استعرض مسار الحجز
+                        </button>
+                        <button class="btn-outline-large" id="heroDemoBtn">
+                            <i class="fa-regular fa-circle-play" style="margin-left: 8px;"></i>
+                            شاهد فيديوهات البروتوتايب
+                        </button>
+                    </div>
+
+                    <div class="hero-trust">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>نسخة بروتوتايب مركزة • حجز من الهاتف • لوحة تحكم لشركات النقل • عرض جاهز للمناقشة</span>
+                    </div>
+                </div>
+
+                <!-- Visual — Dashboard Mockup -->
+                <div class="hero-visual reveal reveal-delay-2">
+                    <div class="dashboard-mockup">
+                        <img src="assets/images/dashboard-mockup.png" alt="لوحة تحكم Safarii - واجهة إدارة شركات النقل"
+                            loading="eager">
+                    </div>
+
+                    <!-- Floating Glass Notification -->
+                    <div class="glass-notification">
+                        <div class="notification-icon green">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+                        <div>
+                            <div class="notification-text">حجز جديد — الجزائر ← وهران</div>
+                            <div class="notification-sub">منذ 3 دقائق</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Glass Metrics -->
+                    <div class="glass-metrics">
+                        <div class="metric-item">
+                            <span class="metric-value highlight" data-target="87">0</span>
+                            <span class="metric-label">% نسبة الإشغال</span>
+                        </div>
+                        <div class="metric-item"
+                            style="border-right: 1px solid rgba(255,255,255,0.1); padding-right: 1.5rem;">
+                            <span class="metric-value" data-target="1247">0</span>
+                            <span class="metric-label">تذكرة مباعة اليوم</span>
+                        </div>
+                        <div class="metric-item"
+                            style="border-right: 1px solid rgba(255,255,255,0.1); padding-right: 1.5rem;">
+                            <span class="metric-value" data-target="24">0</span>
+                            <span class="metric-label">رحلة نشطة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WILAYAS MARQUEE ============ -->
+    <section class="marquee-section" aria-label="الولايات المغطاة">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item">🏙️ الجزائر العاصمة</span>
+                <span class="marquee-item">🏙️ وهران</span>
+                <span class="marquee-item">🏙️ قسنطينة</span>
+                <span class="marquee-item">🏙️ عنابة</span>
+                <span class="marquee-item">🏙️ بسكرة</span>
+                <span class="marquee-item">🏙️ سطيف</span>
+                <span class="marquee-item">🏙️ باتنة</span>
+                <span class="marquee-item">🏙️ تلمسان</span>
+                <span class="marquee-item">🏙️ بجاية</span>
+                <span class="marquee-item">🏙️ ورقلة</span>
+                <span class="marquee-item">🏙️ البليدة</span>
+                <span class="marquee-item">🏙️ الجلفة</span>
+                <span class="marquee-item">🏙️ تيزي وزو</span>
+                <span class="marquee-item">🏙️ المسيلة</span>
+                <span class="marquee-item">🏙️ سيدي بلعباس</span>
+                <!-- Duplicated for seamless loop -->
+                <span class="marquee-item">🏙️ الجزائر العاصمة</span>
+                <span class="marquee-item">🏙️ وهران</span>
+                <span class="marquee-item">🏙️ قسنطينة</span>
+                <span class="marquee-item">🏙️ عنابة</span>
+                <span class="marquee-item">🏙️ بسكرة</span>
+                <span class="marquee-item">🏙️ سطيف</span>
+                <span class="marquee-item">🏙️ باتنة</span>
+                <span class="marquee-item">🏙️ تلمسان</span>
+                <span class="marquee-item">🏙️ بجاية</span>
+                <span class="marquee-item">🏙️ ورقلة</span>
+                <span class="marquee-item">🏙️ البليدة</span>
+                <span class="marquee-item">🏙️ الجلفة</span>
+                <span class="marquee-item">🏙️ تيزي وزو</span>
+                <span class="marquee-item">🏙️ المسيلة</span>
+                <span class="marquee-item">🏙️ سيدي بلعباس</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SOCIAL PROOF — STATS STRIP ============ -->
+    <section class="stats-strip reveal" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number teal" data-target="3">0</span>
+                    <span class="stat-label">مسارات بروتوتايب موثقة بالفيديو</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number blue" data-target="58">0</span>
+                    <span class="stat-label">ولاية مغطاة</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number white" data-target="2">0</span>
+                    <span class="stat-label">واجهتان أساسيتان: العميل ولوحة التحكم</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number orange" data-target="1">0</span>
+                    <span class="stat-label">مشروع تخرج قابل للعرض والمناقشة</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FEATURES SECTION ============ -->
+    <section class="features-section section-padding" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i class="fa-solid fa-gem"></i>
+                    مميزات المنصة
+                </span>
+                <h2>كل ما تحتاجه لإدارة <span class="gradient-text">شركة نقل حديثة</span></h2>
+                <p>أدوات متقدمة مصممة خصيصاً لقطاع النقل البري في الجزائر</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon teal">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3>نظام Multi-Tenant</h3>
+                    <p>احصل على رابط خاص بشركتك مثل <strong dir="ltr">company.safarii.app</strong> مع تطبيق هويتك
+                        البصرية الخاصة بشكل كامل ومستقل.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon blue">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3>شبكة طرق متكاملة</h3>
+                    <p>قاعدة بيانات جاهزة تضم جميع خطوط النقل بين الـ 58 ولاية، لتسهيل إضافة رحلاتك وتحديد نقاط التوقف
+                        بدقة.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon orange">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>تحليلات ذكية</h3>
+                    <p>راقب نسبة إشغال الحافلات ومبيعات التذاكر في الوقت الفعلي مع تقارير تفصيلية لاتخاذ قرارات أفضل.
+                    </p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-4">
+                    <div class="feature-icon purple">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+                    <h3>حجز إلكتروني متقدم</h3>
+                    <p>نظام حجز مباشر مع اختيار المقاعد، الدفع الإلكتروني، وتذاكر QR Code فورية تصل للعميل.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-5">
+                    <div class="feature-icon rose">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3>مساحات إعلانية</h3>
+                    <p>استخدم واجهة التطبيق لترويج رحلاتك الخاصة مثل حافلات VIP وزيادة مبيعاتك مباشرة من منصتنا.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-6">
+                    <div class="feature-icon emerald">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3>دعم فني متواصل</h3>
+                    <p>فريق دعم فني متخصص متاح على مدار الساعة لمساعدتك في أي وقت عبر الهاتف أو الدردشة المباشرة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="how-section section-padding" id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    كيف نعمل؟
+                </span>
+                <h2>ثلاث خطوات بسيطة <span class="gradient-text">لبدء رحلتك</span></h2>
+                <p>انضم للمنصة في دقائق معدودة وابدأ في إدارة شركتك رقمياً</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card reveal reveal-delay-1">
+                    <div class="step-number">١</div>
+                    <span class="step-icon">🏢</span>
+                    <h3>أنشئ شركتك</h3>
+                    <p>سجّل بيانات شركتك وخصّص واجهة الحجز بهويتك البصرية ورابط خاص.</p>
+                </div>
+
+                <div class="step-card reveal reveal-delay-3">
+                    <div class="step-number">٢</div>
+                    <span class="step-icon">🗺️</span>
+                    <h3>أدر المسارات والحافلات</h3>
+                    <p>أضف رحلاتك، حدد المسارات ونقاط التوقف، وأدر أسطول حافلاتك بسهولة.</p>
+                </div>
+
+                <div class="step-card reveal reveal-delay-5">
+                    <div class="step-number">٣</div>
+                    <span class="step-icon">🎫</span>
+                    <h3>استقبل الحجوزات</h3>
+                    <p>يبدأ العملاء بالحجز فوراً عبر رابطك المخصص مع تتبع كل شيء من لوحة التحكم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PRICING SECTION ============ -->
+    <section class="pricing-section section-padding" id="pricing">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i class="fa-solid fa-tags"></i>
+                    خطط الأسعار
+                </span>
+                <h2>اختر الخطة <span class="gradient-text">المناسبة لشركتك</span></h2>
+                <p>أسعار مرنة تناسب جميع أحجام شركات النقل</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card reveal reveal-delay-1">
+                    <div class="pricing-header">
+                        <span class="pricing-name">المبتدئ</span>
+                        <p class="pricing-desc">لشركات النقل الصغيرة</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">مجاني</span>
+                        <span class="pricing-period"></span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> حتى 5 رحلات يومياً</li>
+                        <li><i class="fa-solid fa-check"></i> حافلة واحدة</li>
+                        <li><i class="fa-solid fa-check"></i> واجهة حجز أساسية</li>
+                        <li><i class="fa-solid fa-check"></i> تقارير شهرية</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> رابط مخصص</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> تحليلات متقدمة</li>
+                    </ul>
+                    <button class="btn-outline-pricing">ابدأ مجاناً</button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="pricing-card popular reveal reveal-delay-2">
+                    <div class="popular-badge">الأكثر طلباً</div>
+                    <div class="pricing-header">
+                        <span class="pricing-name">الاحترافي</span>
+                        <p class="pricing-desc">للشركات المتوسطة والنامية</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">9,900</span>
+                        <span class="pricing-currency">د.ج</span>
+                        <span class="pricing-period">/ شهرياً</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> رحلات غير محدودة</li>
+                        <li><i class="fa-solid fa-check"></i> حتى 10 حافلات</li>
+                        <li><i class="fa-solid fa-check"></i> رابط مخصص بهويتك</li>
+                        <li><i class="fa-solid fa-check"></i> تحليلات متقدمة</li>
+                        <li><i class="fa-solid fa-check"></i> دعم فني أولوي</li>
+                        <li><i class="fa-solid fa-check"></i> تذاكر QR Code</li>
+                    </ul>
+                    <button class="btn-primary btn-primary-large" style="width: 100%;">ابدأ التجربة المجانية</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card reveal reveal-delay-3">
+                    <div class="pricing-header">
+                        <span class="pricing-name">المؤسسات</span>
+                        <p class="pricing-desc">للشركات الكبرى والأساطيل</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">مخصص</span>
+                        <span class="pricing-period"></span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> كل مميزات الاحترافي</li>
+                        <li><i class="fa-solid fa-check"></i> حافلات غير محدودة</li>
+                        <li><i class="fa-solid fa-check"></i> API مخصصة</li>
+                        <li><i class="fa-solid fa-check"></i> Safarii IQ (ذكاء اصطناعي)</li>
+                        <li><i class="fa-solid fa-check"></i> مدير حساب مخصص</li>
+                        <li><i class="fa-solid fa-check"></i> تكامل مع أنظمتك</li>
+                    </ul>
+                    <button class="btn-outline-pricing">تواصل معنا</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PRODUCT DEMO ============ -->
+    <section class="demo-section section-padding" id="demo">
+        <div class="container">
+            <div class="demo-grid">
+                <div class="demo-content reveal">
+                    <span class="section-badge" style="margin-bottom: 1.5rem;">
+                        <i class="fa-solid fa-display"></i>
+                        جولة في المنصة
+                    </span>
+                    <h2>واجهة حجز <span class="gradient-text">مصممة لعملائك</span></h2>
+                    <p>
+                        تجربة حجز سلسة ومتكاملة تعكس هوية شركتك، مع نظام اختيار المقاعد وتتبع الرحلات في الوقت الفعلي.
+                    </p>
+                    <ul class="demo-features">
+                        <li><i class="fa-solid fa-circle-check"></i> واجهة حجز مخصصة بهوية كل شركة</li>
+                        <li><i class="fa-solid fa-circle-check"></i> نظام اختيار المقاعد التفاعلي</li>
+                        <li><i class="fa-solid fa-circle-check"></i> تذاكر إلكترونية بـ QR Code</li>
+                        <li><i class="fa-solid fa-circle-check"></i> دعم الدفع عبر CCP و BaridiMob</li>
+                        <li><i class="fa-solid fa-circle-check"></i> تتبع مباشر لحالة الحافلات والرحلات</li>
+                    </ul>
+                    <button class="btn-primary btn-primary-large" id="demoCta">
+                        اكتشف المنصة الآن
+                        <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i>
+                    </button>
+                </div>
+
+                <div class="demo-visual reveal reveal-delay-2">
+                    <div class="demo-image">
+                        <img src="assets/images/booking-preview.png"
+                            alt="واجهة حجز تذاكر Safarii - نظام الحجز الإلكتروني" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROTOTYPE VIDEOS ============ -->
+    <section class="prototype-section section-padding" id="prototype-videos" aria-labelledby="prototype-title">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i class="fa-solid fa-circle-play"></i>
+                    فيديوهات البروتوتايب
+                </span>
+                <h2 id="prototype-title">عروض البروتوتايب</h2>
+                <p>فيديوهات قصيرة توضّح أهم مراحل استخدام منصة SAFARII من التحقق من الهوية إلى الحجز وإدارة الرحلات.</p>
+            </div>
+
+            <div class="prototype-video-grid" dir="rtl">
+                <article class="prototype-video-card reveal reveal-delay-1">
+                    <div class="prototype-card-head">
+                        <div class="prototype-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="prototype-step">01</span>
+                    </div>
+
+                    <div class="prototype-video-mockup prototype-video-mockup--has-video"
+                        aria-label="فيديو التحقق من هوية العميل">
+                        <video class="prototype-real-video" src="assets/video/ID.mp4" preload="metadata"
+                            playsinline></video>
+                        <div class="prototype-video-bars" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="prototype-play" aria-hidden="true">
+                            <i class="fa-solid fa-play"></i>
+                        </span>
+                        <div class="prototype-custom-controls" aria-label="أزرار التحكم في فيديو التحقق">
+                            <button class="prototype-control-play" type="button" aria-label="تشغيل الفيديو">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <div class="prototype-progress-track" role="progressbar" aria-label="تقدم الفيديو"
+                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <span class="prototype-progress-fill"></span>
+                            </div>
+                            <span class="prototype-video-time">0:00</span>
+                            <button class="prototype-control-fullscreen" type="button" aria-label="تكبير الفيديو">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="prototype-card-content">
+                        <h3>التحقق من هوية العميل</h3>
+                        <p>فيديو يوضح كيف يتم التحقق من هوية العميل قبل استخدام خدمات الحجز داخل SAFARII.</p>
+                    </div>
+                </article>
+
+                <article class="prototype-video-card reveal reveal-delay-2">
+                    <div class="prototype-card-head">
+                        <div class="prototype-icon">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+                        <span class="prototype-step">02</span>
+                    </div>
+
+                    <div class="prototype-video-mockup prototype-video-mockup--has-video" role="application"
+                        aria-label="فيديو طريقة الحجز السريع">
+                        <video class="prototype-real-video" src="assets/video/app mobile.mp4" preload="metadata"
+                            playsinline></video>
+                        <div class="prototype-video-bars" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="prototype-play" aria-hidden="true">
+                            <i class="fa-solid fa-play"></i>
+                        </span>
+                        <div class="prototype-custom-controls" aria-label="أزرار التحكم">
+                            <button class="prototype-control-play" type="button" aria-label="تشغيل الفيديو">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <div class="prototype-progress-track" role="progressbar" aria-label="تقدم الفيديو"
+                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <span class="prototype-progress-fill"></span>
+                            </div>
+                            <span class="prototype-video-time">0:00</span>
+                            <button class="prototype-control-fullscreen" type="button" aria-label="تكبير الفيديو">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="prototype-card-content">
+                        <h3>طريقة الحجز السريع</h3>
+                        <p>شرح مختصر لطريقة اختيار الرحلة، إدخال المعلومات، وتأكيد الحجز من تطبيق الهاتف.</p>
+                    </div>
+                </article>
+
+                <article class="prototype-video-card reveal reveal-delay-3">
+                    <div class="prototype-card-head">
+                        <div class="prototype-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span class="prototype-step">03</span>
+                    </div>
+
+                    <div class="prototype-video-mockup prototype-video-mockup--landscape prototype-video-mockup--has-video" role="application"
+                        aria-label="فيديو لوحة تحكم المنصة">
+                        <video class="prototype-real-video" src="assets/video/admin web.mp4" preload="metadata"
+                            playsinline></video>
+                        <div class="prototype-video-bars" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="prototype-play" aria-hidden="true">
+                            <i class="fa-solid fa-play"></i>
+                        </span>
+                        <div class="prototype-custom-controls" aria-label="أزرار التحكم">
+                            <button class="prototype-control-play" type="button" aria-label="تشغيل الفيديو">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <div class="prototype-progress-track" role="progressbar" aria-label="تقدم الفيديو"
+                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <span class="prototype-progress-fill"></span>
+                            </div>
+                            <span class="prototype-video-time">0:00</span>
+                            <button class="prototype-control-fullscreen" type="button" aria-label="تكبير الفيديو">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="prototype-card-content">
+                        <h3>لوحة تحكم المنصة</h3>
+                        <p>فيديو توضيحي لكيفية استعمال Dashboard من طرف شركات النقل لمتابعة الرحلات، الحجوزات،
+                            والإحصائيات.</p>
+                    </div>
+                </article>
+
+                <article class="prototype-video-card reveal reveal-delay-4">
+                    <div class="prototype-card-head">
+                        <div class="prototype-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <span class="prototype-step">04</span>
+                    </div>
+
+                    <div class="prototype-video-mockup prototype-video-mockup--has-video" role="application"
+                        aria-label="فيديو تخطيط الرحلات">
+                        <video class="prototype-real-video" src="assets/video/planification-trips.mp4" preload="metadata"
+                            playsinline></video>
+                        <div class="prototype-video-bars" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="prototype-play" aria-hidden="true">
+                            <i class="fa-solid fa-play"></i>
+                        </span>
+                        <div class="prototype-custom-controls" aria-label="أزرار التحكم">
+                            <button class="prototype-control-play" type="button" aria-label="تشغيل الفيديو">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <div class="prototype-progress-track" role="progressbar" aria-label="تقدم الفيديو"
+                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <span class="prototype-progress-fill"></span>
+                            </div>
+                            <span class="prototype-video-time">0:00</span>
+                            <button class="prototype-control-fullscreen" type="button" aria-label="تكبير الفيديو">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="prototype-card-content">
+                        <h3>تخطيط الرحلات</h3>
+                        <p>فيديو يعرض كيفية تخطيط وجدولة الرحلات باستخدام تطبيق الهاتف بكل مرونة ودقة.</p>
+                    </div>
+                </article>
+
+                <article class="prototype-video-card reveal reveal-delay-5">
+                    <div class="prototype-card-head">
+                        <div class="prototype-icon">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
+                        <span class="prototype-step">05</span>
+                    </div>
+
+                    <div class="prototype-video-mockup prototype-video-mockup--landscape prototype-video-mockup--has-video" role="application"
+                        aria-label="فيديو الحجز عبر الويب">
+                        <video class="prototype-real-video" src="assets/video/WEB_reservation.mp4" preload="metadata"
+                            playsinline></video>
+                        <div class="prototype-video-bars" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="prototype-play" aria-hidden="true">
+                            <i class="fa-solid fa-play"></i>
+                        </span>
+                        <div class="prototype-custom-controls" aria-label="أزرار التحكم">
+                            <button class="prototype-control-play" type="button" aria-label="تشغيل الفيديو">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <div class="prototype-progress-track" role="progressbar" aria-label="تقدم الفيديو"
+                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <span class="prototype-progress-fill"></span>
+                            </div>
+                            <span class="prototype-video-time">0:00</span>
+                            <button class="prototype-control-fullscreen" type="button" aria-label="تكبير الفيديو">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="prototype-card-content">
+                        <h3>الحجز عبر الويب</h3>
+                        <p>فيديو يستعرض عملية حجز التذاكر عبر واجهة الويب بكل سهولة للعملاء.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="testimonials-section section-padding" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i class="fa-solid fa-quote-right"></i>
+                    ملاحظات الاختبار
+                </span>
+                <h2>ما الذي يثبته <span class="gradient-text">البروتوتايب؟</span></h2>
+                <p>بدل شهادات افتراضية، هذه نقاط فحص يمكن عرضها أمام لجنة المناقشة أو المستخدمين الأوائل</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        يوضح البروتوتايب أن رحلة العميل تبدأ من التحقق من الهوية، ثم تنتقل إلى الحجز دون خطوات زائدة
+                        أو واجهات مشتتة.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">01</div>
+                        <div>
+                            <div class="testimonial-name">تدفق العميل</div>
+                            <div class="testimonial-role">هوية، بحث، معلومات، وتأكيد الحجز</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        لوحة التحكم موجهة لشركة النقل: متابعة الرحلات، الحجوزات، والإحصائيات في مكان واحد بدون
+                        ازدحام بصري.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">02</div>
+                        <div>
+                            <div class="testimonial-name">تدفق المشرف</div>
+                            <div class="testimonial-role">Dashboard واضحة للعمليات اليومية</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-5">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        تم فصل فيديوهات الهاتف عن فيديو لوحة التحكم لأن تجربة التطبيق عمودية، بينما dashboard تحتاج
+                        عرضًا أفقيًا مناسبًا للويب.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">03</div>
+                        <div>
+                            <div class="testimonial-name">تناسق العرض</div>
+                            <div class="testimonial-role">هاتف عمودي للتطبيق، وعرض أفقي للويب</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section class="faq-section section-padding" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i class="fa-solid fa-circle-question"></i>
+                    الأسئلة الشائعة
+                </span>
+                <h2>كل ما تريد <span class="gradient-text">معرفته عن Safarii</span></h2>
+                <p>إجابات سريعة على أكثر الأسئلة شيوعاً</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item reveal reveal-delay-1">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>ما هي منصة Safarii؟</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Safarii هي منصة SaaS متكاملة لإدارة شركات النقل البري في الجزائر. توفر لوحة تحكم لإدارة
+                            الحافلات والرحلات والحجوزات، مع واجهة حجز مخصصة بهوية كل شركة يمكن للعملاء الحجز من خلالها.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-delay-2">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>هل المنصة مجانية؟</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، لدينا خطة مجانية تتيح لك إدارة حافلة واحدة وحتى 5 رحلات يومياً. يمكنك الترقية في أي وقت
+                            للحصول على مميزات إضافية مثل الرابط المخصص والتحليلات المتقدمة.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-delay-3">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>كيف يمكن لعملائي الحجز؟</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بمجرد تسجيل شركتك، ستحصل على رابط حجز مخصص يمكنك مشاركته مع عملائك. يمكنهم البحث عن الرحلات،
+                            اختيار المقاعد، والدفع إلكترونياً عبر CCP أو BaridiMob أو نقداً عند الصعود.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-delay-4">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>هل البيانات آمنة على المنصة؟</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، نستخدم أعلى معايير الأمان مع تشفير البيانات بتقنية SSL، ونسخ احتياطي يومي، وحماية متقدمة
+                            ضد الاختراق. بياناتك وبيانات عملائك في أمان تام.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-delay-5">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>ما هو Safarii IQ؟</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Safarii IQ هو نظام ذكاء اصطناعي متقدم سيتوفر قريباً ضمن خطة المؤسسات. يشمل التسعير الذكي
+                            بناءً على الطلب، وتحسين المسارات تلقائياً، والتنبؤ بحجم الطلب لمساعدتك في اتخاذ قرارات أذكى.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-delay-6">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>هل يمكنني إلغاء اشتراكي في أي وقت؟</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بالتأكيد! يمكنك إلغاء أو تغيير خطتك في أي وقت من لوحة التحكم. لا توجد عقود طويلة الأمد ولا
+                            رسوم إلغاء مخفية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA SECTION ============ -->
+    <section class="cta-section section-padding" id="cta">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2>جاهز لتحويل شركتك <span class="gradient-text">إلى المستقبل الرقمي؟</span></h2>
+                <p>انضم إلى أكثر من 150 شركة نقل تستخدم Safarii لإدارة أعمالها بذكاء.</p>
+
+                <div class="cta-actions">
+                    <button class="btn-primary btn-primary-large" id="ctaBtn">
+                        <i class="fa-solid fa-rocket" style="margin-left: 8px;"></i>
+                        ابدأ مجاناً الآن
+                    </button>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=atamniaismail@safarii.app" target="_blank"
+                        rel="noopener" class="btn-outline-large" id="ctaContactBtn"
+                        style="text-decoration: none; display: inline-flex; align-items: center;">
+                        <i class="fa-solid fa-envelope" style="margin-left: 8px;"></i>
+                        تحدث مع فريقنا
+                    </a>
+                </div>
+
+                <div class="cta-trust">
+                    <span><i class="fa-solid fa-lock"></i> لا حاجة لبطاقة ائتمان</span>
+                    <span><i class="fa-solid fa-clock"></i> إعداد في 5 دقائق</span>
+                    <span><i class="fa-solid fa-arrows-rotate"></i> إلغاء في أي وقت</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo">Safarii<span>.</span></span>
+                    <p>المنصة الأولى لإدارة النقل البري في الجزائر. نساعد شركات النقل على التحول الرقمي وزيادة مبيعاتها.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="إنستغرام"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="لينكدإن"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>المنتج</h4>
+                    <ul>
+                        <li><a href="#features">المميزات</a></li>
+                        <li><a href="#demo">جولة في المنصة</a></li>
+                        <li><a href="#pricing">الأسعار</a></li>
+                        <li><a href="#">التحديثات</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>تواصل معنا</h4>
+                    <ul class="contact-links" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li>
+                            <a href="https://t.me/smailata" target="_blank" rel="noopener"
+                                style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-brands fa-telegram" style="color: #0088cc; font-size: 1.2rem;"></i>
+                                <span dir="ltr">@smailata</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=atamniaismail@safarii.app"
+                                target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-envelope"
+                                    style="color: var(--color-primary-light); font-size: 1.2rem;"></i>
+                                <span dir="ltr" style="font-size: 0.9rem;">atamniaismail@safarii.app</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>الدعم</h4>
+                    <ul>
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#faq">الأسئلة الشائعة</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Safarii App. جميع الحقوق محفوظة.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ BACK TO TOP BUTTON ============ -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Three.js CDN (lightweight) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Main Script -->
+    <script src="assets/js/main.js?v=prototype-video-scroll"></script>
+</body>
+
+</html>
