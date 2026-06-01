@@ -138,6 +138,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function scrollToSection(sectionId) {
+        const target = document.getElementById(sectionId);
+        if (!target) return;
+
+        const navHeight = navbar ? navbar.offsetHeight : 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    const heroCtaBtn = document.getElementById('heroCtaBtn');
+    if (heroCtaBtn) {
+        heroCtaBtn.addEventListener('click', () => scrollToSection('demo'));
+    }
+
+    const demoCta = document.getElementById('demoCta');
+    if (demoCta) {
+        demoCta.addEventListener('click', () => scrollToSection('prototype-videos'));
+    }
+
+    const ctaBtn = document.getElementById('ctaBtn');
+    if (ctaBtn) {
+        ctaBtn.addEventListener('click', () => scrollToSection('prototype-videos'));
+    }
+
+    const registerBtn = document.getElementById('registerBtn');
+    if (registerBtn) {
+        registerBtn.addEventListener('click', () => {
+            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=atamniaismail@safarii.app', '_blank', 'noopener');
+        });
+    }
+
+    const loginBtn = document.getElementById('loginBtn');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', () => scrollToSection('scope'));
+    }
+
     // ─── 6. ACTIVE NAV LINK HIGHLIGHTING ────────────────────────
     const sections = document.querySelectorAll('section[id]');
 
@@ -902,19 +941,33 @@ document.addEventListener('DOMContentLoaded', () => {
         video.addEventListener('timeupdate', updateProgress);
         video.addEventListener('ratechange', setPlaybackRate);
 
-        playButton.addEventListener('click', () => {
-            setPlaybackRate();
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
+        playButton.dataset.videoControlReady = 'true';
 
         progressTrack.addEventListener('click', seekFromPointer);
         fullscreenButton.addEventListener('click', toggleFullscreen);
         document.addEventListener('fullscreenchange', updateFullscreenIcon);
         document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
     });
+
+    document.addEventListener('click', event => {
+        const playButton = event.target.closest('.prototype-control-play');
+        if (!playButton) return;
+
+        const mockup = playButton.closest('.prototype-video-mockup--has-video');
+        const video = mockup ? mockup.querySelector('.prototype-real-video') : null;
+        if (!video) return;
+
+        video.defaultPlaybackRate = 1.3;
+        video.playbackRate = 1.3;
+
+        if (video.paused) {
+            video.play().catch(() => {
+                video.muted = true;
+                return video.play().catch(() => {});
+            });
+        } else {
+            video.pause();
+        }
+    }, true);
 
 });

@@ -2538,6 +2538,11 @@ button {
     font-weight: 700;
     font-size: var(--font-size-base);
     transition: all var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn-outline-pricing:hover {
